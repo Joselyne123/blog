@@ -1,6 +1,6 @@
 # APP NAME
 Blog Website
-# AUTHOR
+# BY
 Tabitha Wanjiku
 
 # DESCRIPTION

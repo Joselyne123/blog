@@ -1,5 +1,5 @@
 # APP NAME
-Plandrel Blog Website
+Blog Website
 # AUTHOR
 Tabitha Wanjiku
 

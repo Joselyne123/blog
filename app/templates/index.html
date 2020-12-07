@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+
+
+{% block styles%} 
+    {{ super() }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+   
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="jumbotron" style="font-family: 'Galada', cursive; font-size: 30px;">
+        <h1 class="display-4">Bloggy Blogs</h1>
+        <p class="lead">This is a personal blogging website where you can create and share your opinions and other users can read and comment on them. 
+            Additionally, there is a feature that displays random quotes to inspire users. </p>
+        <hr class="my-4">
+        <p>Come share our great posts. Add yours to the mix as well.</p>
+        <a class="btn btn-primary btn-sm" href="{{ url_for('main.about')}}" role="button">Learn more about this page</a>
+      </div>
+
+
+
+    <div class="container" style="font-family: 'Charm', cursive; font-size: 25px;">
+      <h3>Random Quotes</h3>
+
+     
+      <article class="row">
+          {% for quote in quotes %}
+          <blockquote class="ten columns centered">
+            <p>{{quote.quote}}</p>
+            <footer class="cite">
+              &mdash; {{quote.author}}
+            </footer>
+          </blockquote>
+          <footer>
+            <br>
+            <p>
+            <a href="{{quote.permalink}}" target="_blank">Quote home</a>
+            </p>
+            <br>
+          </footer>
+        </article>
+      {% endfor %}
+    </div>
+    <div id="div1" class="fa" style="font-size:52px;"></div>
+    <script>
+      function hand() {
+        var a;
+        a = document.getElementById("div1");
+        a.innerHTML = "&#xf25a;";
+        setTimeout(function () {
+            a.innerHTML = "&#xf256;";
+          }, 500);
+        setTimeout(function () {
+            a.innerHTML = "&#xf259;";
+          }, 1000);
+        setTimeout(function () {
+            a.innerHTML = "&#xf256;";
+          }, 1500);
+      }
+      hand();
+      setInterval(hand, 2000);
+    </script>
+    <div class="container" style="font-family: 'Lakki Reddy', cursive;">
+      <h2>Blogs Page</h2>
+      {% for post in posts %}
+      <div class="card">
+        <div class="card-body">
+          <h3> <a class="card-title">{{post.title}}</a></h3>
+            <p>Posted by :{{post.author.username}}</p><br>
+          <p>Published: {{ moment(post.posted).fromNow() }} </p>
+          <a class="btn btn-primary" href="{{url_for('blog.post', post_id = post.id)}}">Read Post</a>
+          <a href="{{url_for('users.comment',id=post.id)}}" class= "btn btn-primary btn-sm"><i class="fas fa-comment"></i> Comment</a>
+            
+          
+          </div>
+
+      </div>
+
+      {% endfor %}
+
+    </div>
+
+
+{% endblock %}

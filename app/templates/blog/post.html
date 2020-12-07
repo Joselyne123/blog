@@ -1,0 +1,70 @@
+ 
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block styles%} 
+    {{ super() }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Charm:wght@700&family=Galada&family=Lakki+Reddy&display=swap" rel="stylesheet">
+{% endblock %}
+
+
+
+{% block content %}
+<div class="container" style="font-family: 'Lakki Reddy', cursive; font-size: 25px;">
+    <h2>{{title}}</h2>
+    
+    <h4>Date published: {{post.posted.strftime('%B %d, %Y')}}</h4>
+    <p>
+        {{post.body}}
+
+    </p>
+    <div>
+      <a href="{{url_for('blog.new_comment',id=post.id)}}" class= "btn btn-primary btn-sm"><i class="fas fa-comment"></i> Comment</a>
+
+      
+          
+
+          <span class="label label-primary">
+              {{ post.comments.count() }} Comments
+          </span>
+      
+      </a>
+
+    </div>
+
+    {% if post.author == current_user %}
+    <div>
+
+        <a href="{{url_for('blog.update', post_id = post.id)}}" class= "btn btn-primary btn-sm">Update</a>
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_post">Delete</button>
+    </div>
+
+    {% endif %}
+
+</div>
+<div class="modal" tabindex="-1" role="dialog" id="delete_post">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Delete Post?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Confirm if you want to the delete post!</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <form action="{{url_for('blog.delete_post', post_id = post.id)}}" method="POST">
+                  <input class="btn btn-danger" type="submit" value="Delete">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+{% endblock  %}

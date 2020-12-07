@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block styles%} 
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/about.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Charm:wght@700&display=swap" rel="stylesheet"> 
+{% endblock %}
+
+
+{% block content %}
+<div class="bg" style="font-family: 'Black And White Picture', sans-serif;">
+  <div class="jumbotron">
+    <h1>Information about us</h1>
+<p>
+  Welcome to blogs page. We provide a random quote every time the page refreshes. At the same time, we let users register and post their own quotes.
+</p>
+  </div>
+</div>
+{% endblock %}

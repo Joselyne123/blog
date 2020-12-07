@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+
+{% block content %}
+    <div class="container">
+        <a href="{{url_for('main.index')}}">
+            <button type="button" class="btn btn-primary btn-sm">
+                    <span class="glyphicon glyphicon-chevron-left" ></span> Back
+                </button>
+                <h3 style="color:blue;">Comments:</h3>
+        </a>
+        <div>
+            <a href="{{url_for('users.post_comment',id=id)}}" class= "btn btn-primary btn-sm"><i class="fas fa-comment"></i> Comment</a>
+            
+        <div class="wellbieng">
+            <ul>      
+        {%for comment in post.comments%}
+      
+           <li> {{comment.body}}</li>
+
+        {%endfor%}
+            </ul>
+        </div>      
+                <span class="label label-primary">
+                    {{ post.comments.count() }} Comments
+                </span>
+            
+            </a>
+      
+        </div>
+    </div>
+{% endblock %}

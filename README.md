@@ -1,5 +1,5 @@
 # APP NAME
-Blog Website
+Blog_Web
 # BY
 INGABIRE Joselyne
 

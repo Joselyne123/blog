@@ -42,8 +42,6 @@ A user the needs to sign in order to see posts,create posts,comment posts and de
 # Technologies Used
 This project uses major technologies which are :
 
-HTML5/CSS
-
 Bootstrap
 
 Python3.6

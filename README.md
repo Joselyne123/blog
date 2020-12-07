@@ -49,7 +49,7 @@ Python3.6
 flask
 
 ## CONTACT INFO:
-You can email at:mwangitabitha2020@gmail.com
+Email: joseingabire123@gmail.com
 
 ## LICENSE:
 MIT License

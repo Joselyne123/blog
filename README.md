@@ -25,7 +25,6 @@ A writer can update the blog they posted.
 Python3.6
 
 # Installation steps
-$ git clone https://github.com/tw8130/BLOG-WEB.git
 
 $ cd Blog
 

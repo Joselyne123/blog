@@ -48,9 +48,6 @@ Python3.6
 
 flask
 
-## KNOWN BUGS:
-Any bugs noted you can email me for clarification.
-
 ## CONTACT INFO:
 You can email at:mwangitabitha2020@gmail.com
 

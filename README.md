@@ -20,25 +20,6 @@ A writer can delete comments that are insulting to their blog
 
 A writer can update the blog they posted.
 
-# BDD
-Behaviour	         |    Input	                     |           Output
-
----------------------+-------------------------------+-------------------------------
-
-Create an account    | Click Register                |Register a new user
-
----------------------|-------------------------------|------------------------------
-
-Go to your previous  |Click login                    |Return to your previous account
-account
-
----------------------|-------------------------------|--------------------------------
-
-See your profile     |Click profile                  |See your bio and profile pic
-
----------------------|-------------------------------|-------------------------------
-
-Go to main page      |Click home                     |Go back to homepage
 
 # Prerequisites
 Python3.6

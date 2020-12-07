@@ -13,17 +13,17 @@
 
 {% block content %}
 
-<div class="jumbotron" style="font-family: 'Galada', cursive; font-size: 30px; text-align: center;">
+<div style="font-family: 'Galada', cursive; font-size: 30px; text-align: center; background-color: burlywood;">
         <h1 class="display-4">Bloggy Blogs</h1>
         <p class="lead">This is a personal blogging website where you can create and share your opinions and other users can read and comment on them. 
             Additionally, there is a feature that displays random quotes to inspire users. </p>
         <hr class="my-4">
-        <p>Come share our great posts. Add yours to the mix as well.</p>
+        <!-- <p>Come share our great posts. Add yours to the mix as well.</p> -->
         <a class="btn btn-primary btn-sm" href="{{ url_for('main.about')}}" role="button">Learn more about this page</a>
       </div>
 
-
-
+ 
+<div style="background-color: burlywood;">
     <div class="container" style="font-family: 'Charm', cursive; font-size: 25px;">
       <h3>Random Quotes</h3>
 
@@ -84,6 +84,6 @@
       {% endfor %}
 
     </div>
-
+  </div>
 
 {% endblock %}
